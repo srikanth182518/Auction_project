@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+</head>
+
+<body class="bg-light">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark border shadow small">
+        <a routerLink="/auction-list" class="navbar-brand">
+            <span class="brand-gradient">AUCTION</span>
+        </a>
+        <button
+            type="button"
+            class="navbar-toggler border-0"
+            data-bs-toggle="collapse"
+            data-bs-target="#auction-navbar"
+            aria-controls="auction-navbar"
+            aria-expanded="false"
+            aria-label="Toggle Navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="auction-navbar">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a routerLink="/auction-page" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="/auction-list" class="nav-link">List</a>
+                </li>
+            </ul>
+            <form class="d-flex">
+                <div class="input-group ms-auto me-3">
+                    <input type="text" class="form-control form-control-sm" placeholder="Search here...">
+                    <button class="btn btn-success btn-sm" type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                        </svg>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </nav>
+    <!-- Navbar -->
+    <div class="container mt-3">
+        <div class="row justify-content-center mb-3">
+            <div class="col-md-4">   
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-header text-center">Add Bid</h3>
+                        <div class="card-body">
+                            <form [formGroup]="userForm">
+                                <div class="input-group">
+                                    <div class="col-md-7">
+                                        <label for="u_name" class="form-label">Name</label>
+                                        <input formControlName="name" type="text"   class="form-control" id="name">
+                                        <span class="text-danger" *ngIf="userForm.controls['name'].dirty && userForm.hasError('required','name')">*Name is required</span>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <label for="u_amount" class="form-label">Amount</label>
+                                        <input formControlName="amount" type="number"  class="form-control" id="amount" min="1">
+                                        <span class="text-danger" *ngIf="userForm.controls['amount'].dirty && userForm.hasError('required','amount')">*Amount required</span> 
+                                    </div>
+                                </div>
+                                <div style="margin-left: 52px;">
+                                    <span class="text-danger" *ngIf="edited">*Amount should be greater than previous bid amount</span>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="card-footer">
+                            <div class="d-grid">   
+                                <button 
+                                    class="btn btn-primary"
+                                    type="submit"
+                                    (click)="addItem()"
+                                    [disabled]="!userForm.valid" >
+                                    Submit
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-3 mb-3">
+            <div class="col-md-6">
+                <div class="card shadow-sm border-0 mb-3">
+                    <div class="card-header text-bg-dark text-center">Bid List For <strong>MS DHONI</strong></div>
+                    <table class="table table-bordered mb-0">
+                        <thead>
+                            <tr class="table-primary">
+                                <th class="w-50">Name</th>
+                                <th>Bid Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of listData3">
+                                <td> <span>{{item.name}}</span> </td>
+                                <td> <span>{{item.amount}}</span> </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<body>
+
+

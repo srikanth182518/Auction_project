@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark border shadow small">
+        <a routerLink="/auction-page" class="navbar-brand">
+            <span class="brand-gradient">AUCTION</span>
+        </a>
+        <button
+            type="button"
+            class="navbar-toggler border-0"
+            data-bs-toggle="collapse"
+            data-bs-target="#auction-navbar"
+            aria-controls="auction-navbar"
+            aria-expanded="false"
+            aria-label="Toggle Navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="auction-navbar">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a routerLink="/auction-page" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="/auction-list" class="nav-link">List</a>
+                </li>
+            </ul>
+            <form class="d-flex">
+                <div class="input-group ms-auto me-3">
+                    <input type="text" class="form-control form-control-sm" placeholder="Search here...">
+                    <button class="btn btn-success btn-sm" type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                        </svg>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </nav>
+    <!-- Navbar -->
+
+    <!-- Carousel -->
+    <div class="container mb-5">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="carousel slide" id="carousel-indicators" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="https://th.bing.com/th/id/R.c6b5e05b6bfd536b27752d9ea838aa73?rik=qqe79hz%2f3dtcoQ&riu=http%3a%2f%2fassets.theedgegalerie.com%2ffield%2fimage%2fwordpress-auction.jpg&ehk=X9vtUCCttj07B%2bt9AwXMqcAgctCJtuI9rFvPEiHOjDE%3d&risl=&pid=ImgRaw&r=0" alt="">
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+    <!-- Carousel -->
+
+    <!-- Cards -->
+    <div class="container mt-3 mb-5">
+        <div class="row justify-content-center">
+            <div class="col-md-2 p-1">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h4 class="card-title">Virat Kohli</h4>
+                    </div>
+                    <div class="card-body">
+                        <img class="d-block mb-2 w-100" style="height: 237px;" src="https://i.pinimg.com/originals/4c/c2/3a/4cc23a27aa8c7b1019dc1718ee38bf8e.png" alt="">
+                        <p><strong>Current Bid</strong></p>
+                            <hr>
+                            <div> 
+                                <h4> &#8377; {{rupees}}</h4>
+                            </div>
+                        <div class="d-grid mt-2">
+                            <a 
+                                routerLink="/kohli"
+                                class="btn btn-sm btn-primary">
+                                Bid
+                            </a>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+            <div class="col-md-2 p-1">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h4 class="card-title">MS Dhoni</h4>
+                    </div>
+                    <div class="card-body">
+                        <img class="d-block mb-2 w-100" src="https://th.bing.com/th/id/OIP.dUs1TjVA88Rj3GVfD594mQHaJQ?pid=ImgDet&rs=1" alt="">
+                        <p><strong>Current Bid</strong></p>
+                            <hr>
+                            <div> 
+                                <h4> &#8377; {{rupees1}}</h4>
+                            </div>
+                        <div class="d-grid mt-2">
+                            <a 
+                                routerLink="/dhoni"
+                                class="btn btn-sm btn-primary">
+                                Bid
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 p-1">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h4 class="card-title">Hardik Pandya</h4>
+                    </div>
+                    <div class="card-body">
+                        <img class="d-block mb-2 w-100" src="https://th.bing.com/th/id/OIP.v_8O1Vhsw-3GxMTf80T7uQHaJQ?pid=ImgDet&rs=1" alt="">
+                        <p><strong>Current Bid</strong></p>
+                            <hr>
+                            <div> 
+                                <h4> &#8377; {{rupees2}}</h4>
+                            </div>
+                        <div class="d-grid mt-2">
+                            <a 
+                                routerLink="/hardik"
+                                class="btn btn-sm btn-primary">
+                                Bid
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Cards -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
